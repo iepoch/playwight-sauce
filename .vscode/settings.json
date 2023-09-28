@@ -1,0 +1,62 @@
+
+    {
+        "tabnine.experimentalAutoImports": true,
+        "redhat.telemetry.enabled": true,
+        "git.suggestSmartCommit": false,
+        "workbench.iconTheme": "icons",
+        "workbench.productIconTheme": "material-product-icons",
+        "codestream.email": "steaclem@gmail.com",
+        "editor.fontLigatures": true,
+        "editor.tokenColorCustomizations": {
+            "textMateRules": [
+                {
+                    "scope": "keyword.other.dotenv",
+                    "settings": {
+                        "foreground": "#FF000000"
+                    }
+                }
+            ]
+        },
+        "[typescriptreact]": {
+            "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+        },
+        "liveServer.settings.donotShowInfoMsg": true,
+        "fiveServer.port": 3000,
+        "window.zoomLevel": 1,
+        "[typescript]": {
+            "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+        },
+        "files.associations": {
+            ".env*": "dotenv"
+        },
+        "cucumber.features": [
+    
+            "e2e/**/*.feature",
+            "cypress/e2e/**/*.feature"
+        ],
+        "workbench.settings.applyToAllProfiles": [
+            "cucumber.features"
+        ],
+        "cucumberautocomplete.steps": [
+        "e2e/**/**/*.steps.ts",
+        "cypress/e2e/step_definitions/**/*.steps.js"
+        ],
+        "cucumber.glue": [
+            "features/**/*.js",
+            "features/**/*.jsx",
+            "features/**/*.ts",
+            "features/**/*.tsx",
+            "features/**/*.php",
+            "features/**/*.py",
+            "tests/**/*.py",
+            "tests/**/*.rs",
+            "features/**/*.rs",
+            "features/**/*.rb",
+            "*specs*/**/.cs"
+        ],
+        "codestream.serverUrl": "https://codestream-us1.service.newrelic.com",
+        "testExplorer.useNativeTesting": true,
+        "playwright.reuseBrowser": false,
+        "editor.codeLensFontFamily": "STACKr Code",
+        "workbench.colorTheme": "Mars"
+    }
