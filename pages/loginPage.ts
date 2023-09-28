@@ -1,36 +1,25 @@
-// import {loginCreds, invalidMessages, addLog} from "../utils/commands";
-// import {checkForElementsText} from "../utils/checks";
+import  BasePage  from '../pages/basePage'
+import { Locator, Page} from "@playwright/test";
+import {selector} from "../utils/actionHelpers";
 
-import { Locator } from "playwright";
-import { NewPage } from './page'
+class LoginPage extends BasePage {
+    readonly inputUsername: Locator
+    readonly inputPassword: Locator
+    readonly submit: Locator
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends NewPage {
- 
-	readonly inputUsername: Locator
-	readonly inputPassword: Locator
-  /**
-   * @param {import('playwright').Page} page
-   */
-    constructor(page: any){
-		super(page);
-		this.inputUsername = this.page.locator('[data-test="username"]')
-		this.inputPassword = this.page.locator('[data-test=password]')
-	};	
-    
-    
-	/**
-	 * a method to encapsule automation code to interact with the page
-	 * e.g. to login using username and password
-	 *  note: incase of reset of users or if tos gets updated this should be used to validate the TOS exists and buttons can be clicked
-	 */
-     async enterUsernamePassword(username: string, password: string){
-       await this.inputUsername.fill(username)
-       await this.inputPassword.fill(password)
-     }
-	
+    constructor(page) {
+        super(page)
+        this.inputUsername = this.page.locator('[data-test="username"]')
+        this.inputPassword = this.page.locator('[data-test="password"]')
+        this.submit = this.page.locator('[data-test="login-button"]')
+    }
+
+    async simpleLogin(username: string, password: string){
+        await this.inputUsername.fill(username)
+        await this.inputPassword.fill(password)
+        await this.submit.click()
+        await (await selector('[data-test="product_sort_container"]','', this.page)).click()
+    }
 }
 
 export default LoginPage

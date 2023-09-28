@@ -1,18 +1,7 @@
 {
-  "name": "playwright",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "cucumber:test": "cucumber-js test"
-  },
-  "keywords": [],
   "devDependencies": {
-    "@cucumber/cucumber": "^9.5.1",
     "@playwright/test": "^1.38.1",
-    "@types/cucumber": "^7.0.0",
-    "@types/node": "^20.6.3",
-    "playwright": "^1.38.1",
-    "ts-node": "^10.9.1"
-  }
+    "@types/node": "^20.6.3"
+  },
+  "scripts": {}
 }
