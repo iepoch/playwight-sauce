@@ -58,5 +58,5 @@
         "testExplorer.useNativeTesting": true,
         "playwright.reuseBrowser": false,
         "editor.codeLensFontFamily": "STACKr Code",
-        "workbench.colorTheme": "Mars"
+        "workbench.colorTheme": "Aura Dark (Soft Text)"
     }

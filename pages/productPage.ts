@@ -7,7 +7,7 @@ class ProductPage extends BasePage {
     readonly hamburgerMenu: Locator
     readonly productFilter: Locator
 
-    constructor(page) {
+    constructor(page: any) {
         super(page);
         this.pageTitle = this.page.getByText('Products', {exact: true})
         this.hamburgerMenu = this.page.getByRole('button', { name: 'Open Menu' })
@@ -31,7 +31,7 @@ class ProductPage extends BasePage {
     }
 
     async filterProducts(value: string) {
-      await this.productFilter.selectOption(value)
+        await this.productFilter.selectOption(value)
     }
 }
 

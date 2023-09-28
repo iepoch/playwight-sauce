@@ -8,11 +8,11 @@ export const scrollDown = async (page: Page)=> {
     return await page.keyboard.press('PageDown')
 }
 
-export const selector = async (element: string, options?: any, page?: Page)=> {
+export const selector = async (page: Page, element: string, options?: object)=> {
   return page.locator(element, options)
 }
 
-export const selectByRole = async(role: "alert" | "alertdialog" | "application" | "article" | "banner" | "blockquote" | "button" | "caption" | "cell" | "checkbox", options: object, page?: Page) => {
+export const selectByRole = async(role: "alert" | "alertdialog" | "application" | "article" | "banner" | "blockquote" | "button" | "caption" | "cell" | "checkbox", options: object, page: Page) => {
     return page.getByRole(role, options)
 }
 

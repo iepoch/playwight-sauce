@@ -11,13 +11,15 @@ test.beforeEach("Before Test Run", async ({ loginPage,  page  }) =>{
 
 
 
-test('Login Sauce Demo Site - POM Better Method',  async ({navPage, page}) =>{
+test('Login Sauce Demo Site - POM Better Method',  async ({navPage, actionHelpers,  page}) =>{
     await navPage.nav('button', { name: 'Open Menu' });
     await navPage.nav('link', { name: 'All Items' });
     expect(products.itemDescription('carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromis')).not.toContain('hello')
     await products.filter()
     await products.filterProducts('za')
     await products.filterProducts('lohi')
-    await products.filterProducts('hilo')
+    await actionHelpers.scrollDown(page)
+    const descript = actionHelpers.findByText(page, 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromis', {})
+    console.log(descript)
 })
 
