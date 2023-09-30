@@ -1,6 +1,7 @@
 import { test, expect } from '../utils/customFixtures';
 import ProductPage from "../pages/productPage";
 
+
 let products: ProductPage
 
 test.beforeEach("Before Test Run", async ({ loginPage,  page  }) =>{
@@ -11,15 +12,19 @@ test.beforeEach("Before Test Run", async ({ loginPage,  page  }) =>{
 
 
 
-test('Login Sauce Demo Site - POM Better Method',  async ({navPage, actionHelpers,  page}) =>{
-    await navPage.nav('button', { name: 'Open Menu' });
-    await navPage.nav('link', { name: 'All Items' });
-    expect(products.itemDescription('carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromis')).not.toContain('hello')
-    await products.filter()
-    await products.filterProducts('za')
+test('Sort by Price Low to High',  async ({page}) =>{
     await products.filterProducts('lohi')
-    await actionHelpers.scrollDown(page)
-    const descript = actionHelpers.findByText(page, 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromis', {})
-    console.log(descript)
+    expect(await products.sortPrice()).toEqual('$7.99')
+
+})
+
+test('Sort by Price High to Low',  async ({page}) =>{
+    await products.filterProducts('hilo')
+    expect(await products.sortPrice()).toEqual('$49.99')
+})
+
+
+test('Images are valid images', async ({ page } ) => {
+    expect(await products.imageError()).not.toContain('404')
 })
 

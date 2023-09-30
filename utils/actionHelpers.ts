@@ -23,3 +23,8 @@ export const selectByPlaceholder = async(text: string, options: object, page: Pa
 export const findByText = async (page: Page, text: string, options?: object)=> {
     return page.getByText(text, options)
 }
+
+export const priceSort = async(page: Page) =>{
+ return await page.textContent('.inventory_item_price')
+}
+
