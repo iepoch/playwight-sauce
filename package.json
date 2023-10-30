@@ -3,5 +3,7 @@
     "@playwright/test": "^1.38.1",
     "@types/node": "^20.6.3"
   },
-  "scripts": {}
+  "scripts": {
+    "pw:testui": "npx playwright test --ui"
+  }
 }
