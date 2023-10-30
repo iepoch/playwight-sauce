@@ -43,14 +43,15 @@ class ProductPage extends BasePage {
     
     async imageError() {
         let img;
-        let imgSrc
-        const imageInventoryItem = await this.page.locator("img.inventory_item_img").all()
-      for await ( img of imageInventoryItem){
-           imgSrc = await img.getAttribute('src')
+        let imgSrc;
+        const imageInventoryItem = await this.page.locator("img.inventory_item_img").all();
 
-      }
-     return imgSrc
+    for await ( img of imageInventoryItem){
+        imgSrc = await img.getAttribute('src')
     }
+    return imgSrc
+    }
+    
 
 }
 
